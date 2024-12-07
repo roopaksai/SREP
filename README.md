@@ -1,6 +1,6 @@
 # SREP
 A web-app-based project created for students.
-This project can perform these operations:
+This project can perform these operations:\n
 -> Generates important topics (provide a PDF or chapter with all topics and mention what you are studying).
 -> Create questions based on those topics.
 -> generates model question paper (will be more accurate if you provide previous papers or paper patterns).
