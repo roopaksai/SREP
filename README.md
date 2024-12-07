@@ -3,7 +3,6 @@
 A web-app-based project created for students. This project can perform the following operations:
 
 ## **Generates Important Topics:**
----
 
 Provide a PDF or chapter with all topics and mention what you study.
 
