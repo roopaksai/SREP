@@ -2,22 +2,22 @@
 
 A web-app-based project created for students. This project can perform the following operations:
 
-## **Generates Important Topics**
+## **Generates Important Topics:**
 ---
 
 Provide a PDF or chapter with all topics and mention what you study.
 
-## **Create Questions**
+## **Create Questions:**
 ---
 
 Generate questions based on those topics.
 
-## **Generate Model Question Paper**
+## **Generate Model Question Paper:**
 ---
 
 Create a model question paper (more accurate if you provide previous papers or paper patterns).
 
-## **Analyze Your Answers**
+## **Analyze Your Answers:**
 ---
 
 Enter your answers, and the app will analyze them and provide a report.
