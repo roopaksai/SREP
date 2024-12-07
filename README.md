@@ -1,4 +1,4 @@
-# SREP
+# SREP (Students pREParation guide)
 
 A web-app-based project created for students. This project can perform the following operations:
 
