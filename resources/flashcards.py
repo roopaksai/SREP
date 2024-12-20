@@ -1,28 +1,21 @@
-import os
 from flask import request
+from models.common import Common
 from flask_restful import Resource
+from models.constants import OutputStatus
+from models.interfaces import FlashcardsInput, Output
+from models.upload_flashcards.main import UploadFlashcards
 
-UPLOAD_FOLDER = "temp"
 
-class Flashcards(Resource):
-    def post(self):
-        if 'file' not in request.files:
-            print("DEBUG: 'file' not found in request.files")
-            return {"message": "No file part in the request"}, 400
+class FlashcardsService(Resource):
 
-        file = request.files['file']
+    def get(self) -> dict:
+        input = request.files
+        print(input, 'input')
+        if 'file' not in input:
+            return "No file part"
+        input = input['file']
+        input = {"file": input}
+        about = FlashcardsInput(**input)
+        output = UploadFlashcards(about).process()
 
-        if file.filename == '':
-            print("DEBUG: File selected has an empty filename")
-            return {"message": "No file selected"}, 400
-
-        print(f"DEBUG: File received with filename: {file.filename}")
-
-        file_path = os.path.join(UPLOAD_FOLDER, file.filename)
-        try:
-            file.save(file_path)
-            print(f"DEBUG: File saved at {file_path}")
-            return {"message": f"File {file.filename} uploaded successfully", "path": file_path}, 200
-        except Exception as e:
-            print(f"DEBUG: Error occurred while saving file: {e}")
-            return {"message": f"Error saving file: {str(e)}"}, 500
+        return output.__dict__
