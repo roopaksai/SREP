@@ -10,9 +10,8 @@ class FlashcardsService(Resource):
 
     def get(self) -> dict:
         input = request.files
-        print(input, 'input')
         if 'file' not in input:
-            return "No file part"
+            return Output("No file part", {}, OutputStatus.FAILURE)
         input = input['file']
         input = {"file": input}
         about = FlashcardsInput(**input)
