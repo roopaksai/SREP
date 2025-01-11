@@ -2,7 +2,6 @@ from models.interfaces import Output
 from models.constants import OutputStatus
 
 
-class ErrorHandlers:
     @staticmethod
     def handle_404(e) -> dict:
         return Output(
